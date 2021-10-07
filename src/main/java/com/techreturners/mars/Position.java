@@ -45,10 +45,8 @@ public class Position {
         this.orientation = Orientation.valueOf(orientation);
     }
 
-    public static void main(String[] args){
-        Position position = new Position(1,2,"E");
-        System.out.println(position.getOrientation().toString());
-
+    @Override
+    public String toString() {
+        return coordinateX +" "+ coordinateY +" "+ orientation;
     }
-
 }

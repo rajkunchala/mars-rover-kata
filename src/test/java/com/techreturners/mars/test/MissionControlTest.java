@@ -98,5 +98,42 @@ public class MissionControlTest {
         assertEquals(2,actualY);
     }
 
+    @Test
+    public void checkRoverPositionAfterSeriesOfCommands(){
+        //ARRANGE
+        Rover rover = new Rover(1,2,"N");
+        //ACT
+        //move forward should change the Y to Y-1 and orientation remains S
+        rover.setCommands("LMLMLMLMM");
+        rover.startNavigation();
+        //rover.moveForward();
+        //get orientation and coordinates after moving forward
+        String resultOrientation = rover.getPosition().getOrientation().toString();
+        int actualX = rover.getPosition().getCoordinateX();
+        int actualY = rover.getPosition().getCoordinateY();
+        //ASSERT
+        assertEquals("N",resultOrientation);
+        assertEquals(1,actualX);
+        assertEquals(3,actualY);
+    }
+
+    @Test
+    public void checkRoverPositionAfterSeriesOfCommands2(){
+        //ARRANGE
+        Rover rover = new Rover(3,3,"E");
+        //ACT
+        //move forward should change the Y to Y-1 and orientation remains S
+        rover.setCommands("MMRMMRMRRM");
+        rover.startNavigation();
+        //rover.moveForward();
+        //get orientation and coordinates after moving forward
+        String resultOrientation = rover.getPosition().getOrientation().toString();
+        int actualX = rover.getPosition().getCoordinateX();
+        int actualY = rover.getPosition().getCoordinateY();
+        //ASSERT
+        assertEquals("E",resultOrientation);
+        assertEquals(5,actualX);
+        assertEquals(1,actualY);
+    }
 
 }

@@ -51,12 +51,12 @@ public class Rover {
     }
 
     public void startNavigation(){
-        for (String command:commands.split("")){
-            if (command == "L") {
+        for (char command : getCommands().toCharArray()){
+            if (command == 'L') {
                 turnLeft();
-            } else if (command == "R"){
+            } else if (command == 'R'){
                 turnRight();
-            } else if (command == "M"){
+            } else if (command == 'M'){
                 moveForward();
             }
 
