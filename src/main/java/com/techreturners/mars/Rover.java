@@ -64,4 +64,19 @@ public class Rover {
             this.position.setOrientation("E");
         }
     }
+
+    public void turnRight() {
+        if (this.position.getOrientation().toString() == "E"){
+            this.position.setOrientation("S");
+        }
+        else if (this.position.getOrientation().toString() == "S"){
+            this.position.setOrientation("W");
+        }
+        else if (this.position.getOrientation().toString() == "W"){
+            this.position.setOrientation("N");
+        }
+        else if (this.position.getOrientation().toString() == "N"){
+            this.position.setOrientation("E");
+        }
+    }
 }
