@@ -30,7 +30,7 @@ public class Rover {
         return position;
     }
 
-    public void setPos(Position pos) {
+    public void setPosition(Position pos) {
         this.position = pos;
     }
 
@@ -48,5 +48,20 @@ public class Rover {
 
     public void setRoverCount(int roverCount) {
         this.roverCount = roverCount;
+    }
+
+    public void turnLeft() {
+        if (this.position.getOrientation().toString() == "E"){
+            this.position.setOrientation("N");
+        }
+        else if (this.position.getOrientation().toString() == "N"){
+            this.position.setOrientation("W");
+        }
+        else if (this.position.getOrientation().toString() == "W"){
+            this.position.setOrientation("S");
+        }
+        else if (this.position.getOrientation().toString() == "S"){
+            this.position.setOrientation("E");
+        }
     }
 }
