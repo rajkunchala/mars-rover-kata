@@ -50,7 +50,19 @@ public class Rover {
         this.roverCount = roverCount;
     }
 
-    public void turnLeft() {
+    public void startNavigation(){
+        for (String command:commands.split("")){
+            if (command == "L") {
+                turnLeft();
+            } else if (command == "R"){
+                turnRight();
+            } else if (command == "M"){
+                moveForward();
+            }
+
+        }
+    }
+    private void turnLeft() {
         if (this.position.getOrientation().toString() == "E"){
             this.position.setOrientation("N");
         }
@@ -65,7 +77,7 @@ public class Rover {
         }
     }
 
-    public void turnRight() {
+    private void turnRight() {
         if (this.position.getOrientation().toString() == "E"){
             this.position.setOrientation("S");
         }
@@ -80,7 +92,7 @@ public class Rover {
         }
     }
 
-    public void moveForward() {
+    private void moveForward() {
         if (this.position.getOrientation().toString() == "N"){
             this.position.setCoordinateY(position.getCoordinateY()+1);
         }
@@ -94,4 +106,5 @@ public class Rover {
             this.position.setCoordinateX(position.getCoordinateX()-1);
         }
     }
+
 }

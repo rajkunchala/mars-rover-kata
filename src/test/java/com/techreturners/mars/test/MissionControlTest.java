@@ -48,7 +48,9 @@ public class MissionControlTest {
         Rover rover = new Rover(2,3,"E");
         //ACT
         //turn left from E should change the orientation to N
-        rover.turnLeft();
+        rover.setCommands("L");
+        rover.startNavigation();
+        //rover.turnLeft();
         //get orientation and coordinates after turning left
         String resultOrientation = rover.getPosition().getOrientation().toString();
         int actualX = rover.getPosition().getCoordinateX();
@@ -65,7 +67,9 @@ public class MissionControlTest {
         Rover rover = new Rover(4,2,"S");
         //ACT
         //turn right from S should change the orientation to W
-        rover.turnRight();
+        rover.setCommands("R");
+        rover.startNavigation();
+        //rover.turnRight();
         //get orientation and coordinates after turning right
         String resultOrientation = rover.getPosition().getOrientation().toString();
         int actualX = rover.getPosition().getCoordinateX();
@@ -81,7 +85,9 @@ public class MissionControlTest {
         Rover rover = new Rover(2,3,"S");
         //ACT
         //move forward should change the Y to Y-1 and orientation remains S
-        rover.moveForward();
+        rover.setCommands("M");
+        rover.startNavigation();
+        //rover.moveForward();
         //get orientation and coordinates after moving forward
         String resultOrientation = rover.getPosition().getOrientation().toString();
         int actualX = rover.getPosition().getCoordinateX();
@@ -91,4 +97,6 @@ public class MissionControlTest {
         assertEquals(2,actualX);
         assertEquals(2,actualY);
     }
+
+
 }
