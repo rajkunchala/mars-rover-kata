@@ -81,7 +81,17 @@ public class Rover {
     }
 
     public void moveForward() {
-
-
+        if (this.position.getOrientation().toString() == "N"){
+            this.position.setCoordinateY(position.getCoordinateY()+1);
+        }
+        else if (this.position.getOrientation().toString() == "E"){
+            this.position.setCoordinateX(position.getCoordinateX()+1);
+        }
+        else if (this.position.getOrientation().toString() == "S"){
+            this.position.setCoordinateY(position.getCoordinateY()-1);
+        }
+        else if (this.position.getOrientation().toString() == "W"){
+            this.position.setCoordinateX(position.getCoordinateX()-1);
+        }
     }
 }
