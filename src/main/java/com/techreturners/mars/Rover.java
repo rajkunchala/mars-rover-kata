@@ -79,4 +79,9 @@ public class Rover {
             this.position.setOrientation("E");
         }
     }
+
+    public void moveForward() {
+
+
+    }
 }
