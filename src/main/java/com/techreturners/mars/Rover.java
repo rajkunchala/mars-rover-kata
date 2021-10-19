@@ -39,47 +39,54 @@ public class Rover {
         }
     }
     private void turnLeft() {
-        if (position.getOrientation().toString().equals("E")){
-            position.setOrientation("N");
-        }
-        else if (position.getOrientation().toString().equals("N")){
-            position.setOrientation("W");
-        }
-        else if (position.getOrientation().toString().equals("W")){
-            position.setOrientation("S");
-        }
-        else if (position.getOrientation().toString().equals("S")){
-            position.setOrientation("E");
+
+        switch (position.getOrientation()) {
+            case E:
+                position.setOrientation("N");
+                break;
+            case N:
+                position.setOrientation("W");
+                break;
+            case W:
+                position.setOrientation("S");
+                break;
+            case S:
+                position.setOrientation("E");
+                break;
         }
     }
 
     private void turnRight() {
-        if (position.getOrientation().toString().equals("E")){
-            position.setOrientation("S");
-        }
-        else if (position.getOrientation().toString().equals("S")){
-            position.setOrientation("W");
-        }
-        else if (position.getOrientation().toString().equals("W")){
-            position.setOrientation("N");
-        }
-        else if (position.getOrientation().toString().equals("N")){
-            position.setOrientation("E");
+        switch (position.getOrientation()) {
+            case E:
+                position.setOrientation("S");
+                break;
+            case S:
+                position.setOrientation("W");
+                break;
+            case W:
+                position.setOrientation("N");
+                break;
+            case N:
+                position.setOrientation("E");
+                break;
         }
     }
 
     private void moveForward()  {
-        if (position.getOrientation().toString().equals("N")){
-            position.setCoordinateY(position.getCoordinateY()+1);
-        }
-        else if (position.getOrientation().toString().equals("E")){
-            position.setCoordinateX(position.getCoordinateX()+1);
-        }
-        else if (position.getOrientation().toString().equals("S")){
-            position.setCoordinateY(position.getCoordinateY()-1);
-        }
-        else if (position.getOrientation().toString().equals("W")){
-            position.setCoordinateX(position.getCoordinateX()-1);
+        switch (position.getOrientation()) {
+            case N:
+                position.setCoordinateY(position.getCoordinateY() + 1);
+                break;
+            case E:
+                position.setCoordinateX(position.getCoordinateX() + 1);
+                break;
+            case S:
+                position.setCoordinateY(position.getCoordinateY() - 1);
+                break;
+            case W:
+                position.setCoordinateX(position.getCoordinateX() - 1);
+                break;
         }
     }
 

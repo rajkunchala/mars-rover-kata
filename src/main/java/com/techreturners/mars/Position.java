@@ -11,7 +11,7 @@ public class Position {
         N,
         E,
         S,
-        W;
+        W
     }
 
     Position(int coordinateX,int coordinateY,String orientation){
@@ -19,7 +19,7 @@ public class Position {
         this.coordinateY = coordinateY;
         this.orientation = Orientation.valueOf(orientation);
 
-    };
+    }
 
     public int getCoordinateX() {
         return coordinateX;

@@ -10,7 +10,7 @@ public class MissionControlTest {
 
     //
     @Test
-    public void checkSetupOfPlateauWithCoordinatesMoreThanLimit() throws Exception {
+    public void checkSetupOfPlateauWithCoordinatesMoreThanLimit() {
         //Arrange
         Plateau plateau;
         String exception = null;
