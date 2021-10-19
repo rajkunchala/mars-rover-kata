@@ -5,33 +5,18 @@ public class Rover {
     //can receive a String of commands
     //behaviours
     //turnLeft , turnRight, Move
-    private int roverId;
     private Position position;
     private String commands;
-    private int roverCount;
 
     public Rover() {
     }
 
     public Rover(int x, int y, String orientation) {
-        this.position = new Position(x,y,orientation);
-        this.roverId = ++roverCount;
-    }
-
-    public int getRoverId() {
-        return roverId;
-    }
-
-    public void setRoverId(int roverId) {
-        this.roverId = roverId;
+        position = new Position(x,y,orientation);
     }
 
     public Position getPosition() {
         return position;
-    }
-
-    public void setPosition(Position pos) {
-        this.position = pos;
     }
 
     public String getCommands() {
@@ -40,14 +25,6 @@ public class Rover {
 
     public void setCommands(String commands) {
         this.commands = commands;
-    }
-
-    public int getRoverCount() {
-        return roverCount;
-    }
-
-    public void setRoverCount(int roverCount) {
-        this.roverCount = roverCount;
     }
 
     public void startNavigation(){
@@ -59,51 +36,50 @@ public class Rover {
             } else if (command == 'M'){
                 moveForward();
             }
-
         }
     }
     private void turnLeft() {
-        if (this.position.getOrientation().toString() == "E"){
-            this.position.setOrientation("N");
+        if (position.getOrientation().toString().equals("E")){
+            position.setOrientation("N");
         }
-        else if (this.position.getOrientation().toString() == "N"){
-            this.position.setOrientation("W");
+        else if (position.getOrientation().toString().equals("N")){
+            position.setOrientation("W");
         }
-        else if (this.position.getOrientation().toString() == "W"){
-            this.position.setOrientation("S");
+        else if (position.getOrientation().toString().equals("W")){
+            position.setOrientation("S");
         }
-        else if (this.position.getOrientation().toString() == "S"){
-            this.position.setOrientation("E");
+        else if (position.getOrientation().toString().equals("S")){
+            position.setOrientation("E");
         }
     }
 
     private void turnRight() {
-        if (this.position.getOrientation().toString() == "E"){
-            this.position.setOrientation("S");
+        if (position.getOrientation().toString().equals("E")){
+            position.setOrientation("S");
         }
-        else if (this.position.getOrientation().toString() == "S"){
-            this.position.setOrientation("W");
+        else if (position.getOrientation().toString().equals("S")){
+            position.setOrientation("W");
         }
-        else if (this.position.getOrientation().toString() == "W"){
-            this.position.setOrientation("N");
+        else if (position.getOrientation().toString().equals("W")){
+            position.setOrientation("N");
         }
-        else if (this.position.getOrientation().toString() == "N"){
-            this.position.setOrientation("E");
+        else if (position.getOrientation().toString().equals("N")){
+            position.setOrientation("E");
         }
     }
 
-    private void moveForward() {
-        if (this.position.getOrientation().toString() == "N"){
-            this.position.setCoordinateY(position.getCoordinateY()+1);
+    private void moveForward()  {
+        if (position.getOrientation().toString().equals("N")){
+            position.setCoordinateY(position.getCoordinateY()+1);
         }
-        else if (this.position.getOrientation().toString() == "E"){
-            this.position.setCoordinateX(position.getCoordinateX()+1);
+        else if (position.getOrientation().toString().equals("E")){
+            position.setCoordinateX(position.getCoordinateX()+1);
         }
-        else if (this.position.getOrientation().toString() == "S"){
-            this.position.setCoordinateY(position.getCoordinateY()-1);
+        else if (position.getOrientation().toString().equals("S")){
+            position.setCoordinateY(position.getCoordinateY()-1);
         }
-        else if (this.position.getOrientation().toString() == "W"){
-            this.position.setCoordinateX(position.getCoordinateX()-1);
+        else if (position.getOrientation().toString().equals("W")){
+            position.setCoordinateX(position.getCoordinateX()-1);
         }
     }
 
